@@ -23,6 +23,6 @@ function calculateTask2(){
 }
 
 function calculateTask3(){
-    let taskResult = calculateFormula();
+    let taskResult = calculateFormula(x, y, z);
     document.getElementById("task3Result").innerText = taskResult;
 }

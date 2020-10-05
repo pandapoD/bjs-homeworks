@@ -15,7 +15,7 @@ describe('Домашнее задание к занятию 1.1 «Базовый
 
   describe('Задача №3', () => {
     it('должна правильно считать формулу', () => {
-      expect(calculateFormula()).toEqual(45);
+      expect(calculateFormula(x, y, z)).toEqual(45);
     });
   });
 });
