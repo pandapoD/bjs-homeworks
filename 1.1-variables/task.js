@@ -26,10 +26,11 @@ function sayHello(userName) {
 }
 
 
-    let x = 2;
+    
+function calculateFormula() {
+	let x = 2;
 	let y = 22;
 	let z = 0;
-function calculateFormula(x, y, z) {
 
 	let result;
 
