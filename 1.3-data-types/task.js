@@ -2,8 +2,8 @@
 function calculateTotalMortgage(percent, contribution, amount, date) {
     // код для задачи №1 писать здесь
 
-    let arrInputNumber = [Number.parseInt(window.percent.value),Number.parseInt(window.contribution.value),Number.parseInt(window.amount.value)];
-    let arrInput = [window.percent.value,window.contribution.value,window.amount.value];
+    let arrInputNumber = [Number.parseInt(percent),Number.parseInt(contribution),Number.parseInt(amount)];
+    let arrInput = [percent, contribution, amount]; // здесь долно быть значение с ввода, но в main.js они преобразуются и попадают только NAN
     let arrStringWindows = [' процентная ставка', ' начальный взнос', ' общая стоимость'];
     let arrErrString = [];
     let arrErrNumber = [];
@@ -23,14 +23,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     }
     let payment = principal * ((percent / 100 / 12) + (percent / 100 / 12) / (((1 + (percent / 100 / 12))**paidMonths) - 1));
     let totalAmount = payment * paidMonths;
-    return totalAmount.toFixed(2);
+    return Number(totalAmount.toFixed(2));
 }
 
 function getGreeting(name) {
-    if (name == "" || name == "null" || name == "undefined") {
-    	return `Привет, мир! Меня зовут Аноним`;
-    }
-    return `Привет, мир! Меня зовут ${name}`;
-    // код для задачи №2 писать здесь
-    // return greeting;
+	return `Привет, мир! Меня зовут ${name||"Аноним"}`;
 }
