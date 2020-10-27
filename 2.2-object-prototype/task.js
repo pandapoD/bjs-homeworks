@@ -12,7 +12,7 @@ String.prototype.isPalindrome = function() {
 
 function getAverageMark(marks) {
     // код для задачи №2 писать здесь
-    sum = 0;
+    let sum = 0;
     if (marks.length === 0) {
     	return 0;
     }
@@ -27,7 +27,7 @@ function checkBirthday(birthday) {
     let now = +new Date();
     const birthdayUser = +new Date(birthday);
     let diff = now - birthdayUser;
-    let age = diff / 1000 / 3600 / 24 / 365;
+    let age = diff / 1000 / 3600 / 24 / 365.25;
     return age >= 18;
     // return verdict
 }
