@@ -1,18 +1,18 @@
 //---------------------------------------Задача 1-------------------------------------------------
 function parseCount(value) {
-	if (isNaN(Number.parseInt(value)) === true) {
+	const parseCount = Number.parseInt(value)
+	if (isNaN(parseCount)) {
 		throw new Error("Невалидное значение");
 	}
-	return Number.parseInt(value);
+	return parseCount//Number.parseInt(value);
 }
 
 function validateCount(value) {
 	try { 
-		parseCount(value);
-	} catch {
-		return new Error("Невалидное значение");//`Введено неверное значение "${value}"`;
+		return parseCount(value);
+	} catch (e) {
+		return e;
 	}
-	return parseCount(value);
 }
 // console.log(parseCount("123"));
 // console.log(parseCount(123));
