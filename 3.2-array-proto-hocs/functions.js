@@ -120,10 +120,10 @@ function memorize(arithmeticOperations, limit) {
 		let array2 = [...args];
 		let memoryFind = memory.find(number => compareArrays(number.args, array2));
 		if (memoryFind !== undefined) {
-			console.log('Значение сохранено в памяти');
+			//console.log('Значение сохранено в памяти');
 			return memoryFind.result;
 		} else {
-			console.log('Ничего не найдено в памяти');
+			//console.log('Ничего не найдено в памяти');
 			memory.push({args: array2, result: arithmeticOperations (...args)});
 			//console.log(memory);
 			if (memory.length > limit) {
@@ -135,9 +135,10 @@ function memorize(arithmeticOperations, limit) {
 	
 };
 
-//const resultFunction = memorize((a,b) => a + b, 10);
-// const mMux = memorize((a,b) => a * b, 10)
-// mMux (3,8)
+// const mSum = memorize((a,b,c,d) => a + b + c + d, 10);
+// mSum(3,5,7,4);
+// const mMux = memorize((a,b) => a * b, 10);
+// mMux (3,8);
 // resultFunction(3,4); // <= должно вывести: 7
 // resultFunction(2,6); // <= ничего не найдёт в памяти.
 // resultFunction(8,3);
@@ -145,17 +146,17 @@ function memorize(arithmeticOperations, limit) {
 // resultFunction(5,6);
 // resultFunction(7,1);
 
-const testCase = (testFunction, functionTime) => {
+const testCase = (testFunction, functionName) => {
 
-//let functionTime = 'Время выполнения скрипта';
-console.time(functionTime);
-	for (let z = 0, z < initialArray.length, z++) {
-		initialArray[z].forEach(function(item) {
-			testFunction(...args)
+	console.time(functionName);
+	for (let i = 0; i < initialArray.length; i++) {
+		initialArray[i].forEach(function(item) {
+			testFunction()
 		})
 	}
-	console.timeEnd(functionTime);
-
+	console.timeEnd(functionName);
 }
 
 let initialArray = [ [1,2,3], [1,2], [1,2,3], [1,2], [9,5,2,4] ];
+testCase (sum, 'sum')
+testCase (mSum, 'mSum');
